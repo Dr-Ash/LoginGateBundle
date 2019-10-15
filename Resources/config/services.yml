@@ -1,0 +1,15 @@
+parameters:
+    Ash.login_gate.authentication.listener.form.class: Ash\LoginGateBundle\Security\UsernamePasswordFormAuthenticationListener
+services:
+    Ash.login_gate.storage.session:
+        class: Ash\LoginGateBundle\Storage\SessionStorage
+    Ash.login_gate.attempt_storage:
+        class: Ash\LoginGateBundle\Storage\CompositeStorage
+    Ash.login_gate.brute_force_checker:
+        class: Ash\LoginGateBundle\Service\BruteForceChecker
+        arguments: ['@Ash.login_gate.attempt_storage', '%Ash.login_gate.brute_force_checker_options%']
+    Ash.login_gate.autentication_handler:
+        class: Ash\LoginGateBundle\Security\AuthenticationHandler
+        arguments: ['@request_stack', '@Ash.login_gate.attempt_storage']
+        tags:
+            - { name: kernel.event_subscriber }

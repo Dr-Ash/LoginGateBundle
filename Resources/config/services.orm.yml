@@ -1,0 +1,7 @@
+parameters:
+    Ash.login_gate.orm.entity_class: Ash\LoginGateBundle\Entity\FailureLoginAttempt
+services:
+    Ash.login_gate.storage.orm:
+        class: Ash\LoginGateBundle\Storage\DatabaseAccountStorage
+        arguments: ['@doctrine.orm.entity_manager', '%Ash.login_gate.orm.entity_class%', '%Ash.login_gate.watch_period%']
+
