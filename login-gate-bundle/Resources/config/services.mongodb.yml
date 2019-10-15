@@ -1,0 +1,7 @@
+parameters:
+    ash.login_gate.mongodb.document_class: Ash\LoginGateBundle\Document\FailureLoginAttempt
+services:
+    ash.login_gate.storage.mongodb:
+        class: Ash\LoginGateBundle\Storage\DatabaseAccountStorage
+        arguments: ['@doctrine_mongodb.odm.document_manager', '%a.login_gate.mongodb.document_class%', '%ash.login_gate.watch_period%']
+

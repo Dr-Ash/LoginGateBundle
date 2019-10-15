@@ -1,0 +1,14 @@
+Ash\LoginGateBundle\Document\FailureLoginAttempt:
+    type: document
+    repositoryClass: Ash\LoginGateBundle\Document\FailureLoginAttemptRepository
+    fields:
+        id:
+            type: id
+            id: true
+        ip:
+            type: string
+            index: true
+        createdAt:
+            type: date
+        data:
+            type: hash

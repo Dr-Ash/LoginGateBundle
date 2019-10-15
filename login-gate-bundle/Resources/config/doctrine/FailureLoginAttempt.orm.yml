@@ -1,0 +1,22 @@
+Ash\LoginGateBundle\Entity\FailureLoginAttempt:
+    type: entity
+    table: failure_login_attempt
+    repositoryClass: Ash\LoginGateBundle\Entity\FailureLoginAttemptRepository
+    indexes:
+        ip:
+            columns: [ ip ]
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        ip:
+            type: string
+            length: 45 #compatibility with ipv6
+        username:
+            type: string
+            length: 225 #compatibility with ipv6
+        createdAt:
+            type: datetime
+        data:
+            type: array
