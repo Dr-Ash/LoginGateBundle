@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace Ash\LoginGateBundle\Tests;
+=======
+namespace Anyx\LoginGateBundle\Tests;
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\SchemaTool;

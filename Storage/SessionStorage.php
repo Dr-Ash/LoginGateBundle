@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace Ash\LoginGateBundle\Storage;
+=======
+namespace Anyx\LoginGateBundle\Storage;
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;

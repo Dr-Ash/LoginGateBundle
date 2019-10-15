@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 namespace Ash\LoginGateBundle\DependencyInjection;
+=======
+namespace Anyx\LoginGateBundle\DependencyInjection;
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

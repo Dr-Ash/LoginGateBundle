@@ -1,4 +1,5 @@
 parameters:
+<<<<<<< HEAD
     Ash.login_gate.authentication.listener.form.class: Ash\LoginGateBundle\Security\UsernamePasswordFormAuthenticationListener
 services:
     Ash.login_gate.storage.session:
@@ -11,5 +12,19 @@ services:
     Ash.login_gate.autentication_handler:
         class: Ash\LoginGateBundle\Security\AuthenticationHandler
         arguments: ['@request_stack', '@Ash.login_gate.attempt_storage']
+=======
+    anyx.login_gate.authentication.listener.form.class: Anyx\LoginGateBundle\Security\UsernamePasswordFormAuthenticationListener
+services:
+    anyx.login_gate.storage.session:
+        class: Anyx\LoginGateBundle\Storage\SessionStorage
+    anyx.login_gate.attempt_storage:
+        class: Anyx\LoginGateBundle\Storage\CompositeStorage
+    anyx.login_gate.brute_force_checker:
+        class: Anyx\LoginGateBundle\Service\BruteForceChecker
+        arguments: ['@anyx.login_gate.attempt_storage', '%anyx.login_gate.brute_force_checker_options%']
+    anyx.login_gate.autentication_handler:
+        class: Anyx\LoginGateBundle\Security\AuthenticationHandler
+        arguments: ['@request_stack', '@anyx.login_gate.attempt_storage']
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
         tags:
             - { name: kernel.event_subscriber }

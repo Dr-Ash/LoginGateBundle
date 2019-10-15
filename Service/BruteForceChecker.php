@@ -1,14 +1,25 @@
 <?php
 
+<<<<<<< HEAD
 namespace Ash\LoginGateBundle\Service;
 
 use Symfony\Component\HttpFoundation\Request;
 use Ash\LoginGateBundle\Storage\StorageInterface;
+=======
+namespace Anyx\LoginGateBundle\Service;
+
+use Symfony\Component\HttpFoundation\Request;
+use Anyx\LoginGateBundle\Storage\StorageInterface;
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
 
 class BruteForceChecker
 {
     /**
+<<<<<<< HEAD
      * @var \Ash\LoginGateBundle\Storage\DatabaseAccountStorage
+=======
+     * @var \Anyx\LoginGateBundle\Storage\StorageInterface
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
      */
     protected $storage;
 
@@ -21,7 +32,11 @@ class BruteForceChecker
     ];
 
     /**
+<<<<<<< HEAD
      * @return \Ash\LoginGateBundle\Storage\DatabaseAccountStorage
+=======
+     * @return \Anyx\LoginGateBundle\Storage\StorageInterface
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
      */
     public function getStorage()
     {
@@ -29,7 +44,11 @@ class BruteForceChecker
     }
 
     /**
+<<<<<<< HEAD
      * @param \Ash\LoginGateBundle\Storage\DatabaseAccountStorage $storage
+=======
+     * @param \Anyx\LoginGateBundle\Storage\StorageInterface $storage
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
      * @param array $options
      */
     public function __construct(StorageInterface $storage, array $options)
@@ -44,6 +63,7 @@ class BruteForceChecker
      */
     public function canLogin(Request $request)
     {
+<<<<<<< HEAD
 //        dd($this->getStorage()->getCountAttempts($request));
         $oo = $this->getStorage()->getCountAttempts($request);
 //        $request->getSession()->clear();
@@ -54,6 +74,14 @@ class BruteForceChecker
 
             if ($dateAllowLogin->diff(new \DateTime())->invert === 1) {
 
+=======
+        if ($this->getStorage()->getCountAttempts($request) >= $this->options['max_count_attempts']) {
+
+            $lastAttemptDate = $this->getStorage()->getLastAttemptDate($request);
+            $dateAllowLogin = $lastAttemptDate->modify('+' . $this->options['timeout'] . ' second');
+
+            if ($dateAllowLogin->diff(new \DateTime())->invert === 1) {
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
                 return false;
             }
         }

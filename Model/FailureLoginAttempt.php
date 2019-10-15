@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace Ash\LoginGateBundle\Model;
+=======
+namespace Anyx\LoginGateBundle\Model;
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
 
 abstract class FailureLoginAttempt
 {
@@ -15,11 +19,14 @@ abstract class FailureLoginAttempt
     protected $ip;
 
     /**
+<<<<<<< HEAD
      * @var string
      */
     protected $username;
 
     /**
+=======
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
      * @var \DateTime
      */
     protected $createdAt;
@@ -68,6 +75,7 @@ abstract class FailureLoginAttempt
     {
         $this->data = $data;
     }
+<<<<<<< HEAD
 
 
     public function getUsername()
@@ -79,4 +87,6 @@ abstract class FailureLoginAttempt
     {
         $this->username = $username;
     }
+=======
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
 }

@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 Ash\LoginGateBundle\Entity\FailureLoginAttempt:
     type: entity
     table: failure_login_attempt
     repositoryClass: Ash\LoginGateBundle\Entity\FailureLoginAttemptRepository
+=======
+Anyx\LoginGateBundle\Entity\FailureLoginAttempt:
+    type: entity
+    table: failure_login_attempt
+    repositoryClass: Anyx\LoginGateBundle\Entity\FailureLoginAttemptRepository
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
     indexes:
         ip:
             columns: [ ip ]
@@ -13,9 +20,12 @@ Ash\LoginGateBundle\Entity\FailureLoginAttempt:
         ip:
             type: string
             length: 45 #compatibility with ipv6
+<<<<<<< HEAD
         username:
             type: string
             length: 225 #compatibility with ipv6
+=======
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
         createdAt:
             type: datetime
         data:

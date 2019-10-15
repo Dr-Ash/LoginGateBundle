@@ -1,8 +1,14 @@
 <?php
 
+<<<<<<< HEAD
 namespace Ash\LoginGateBundle\Storage;
 
 use Ash\LoginGateBundle\Exception\BruteForceAttemptException;
+=======
+namespace Anyx\LoginGateBundle\Storage;
+
+use Anyx\LoginGateBundle\Exception\BruteForceAttemptException;
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
@@ -53,7 +59,11 @@ class DatabaseStorage implements StorageInterface
             return;
         }
 
+<<<<<<< HEAD
         $this->getRepository()->clearAttempts($request->getClientIp(),$this->getUsername($request));
+=======
+        $this->getRepository()->clearAttempts($request->getClientIp());
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
     }
 
     /**
@@ -68,7 +78,11 @@ class DatabaseStorage implements StorageInterface
         $startWatchDate = new \DateTime();
         $startWatchDate->modify('-' . $this->getWatchPeriod(). ' second');
 
+<<<<<<< HEAD
         return $this->getRepository()->getCountAttempts($request->getClientIp(), $this->getUsername($request),$startWatchDate);
+=======
+        return $this->getRepository()->getCountAttempts($request->getClientIp(), $startWatchDate);
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
     }
 
     /**
@@ -77,13 +91,20 @@ class DatabaseStorage implements StorageInterface
      */
     public function getLastAttemptDate(Request $request)
     {
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
         if (!$this->hasIp($request)) {
             return false;
         }
 
+<<<<<<< HEAD
         $lastAttempt = $this->getRepository()->getLastAttempt($request->getClientIp(),$this->getUsername($request));
+=======
+        $lastAttempt = $this->getRepository()->getLastAttempt($request->getClientIp());
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
         if (!empty($lastAttempt)) {
             return $lastAttempt->getCreatedAt();
         }
@@ -108,7 +129,10 @@ class DatabaseStorage implements StorageInterface
 
         $model->setIp($request->getClientIp());
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
         $data = [
             'exception' => $exception->getMessage(),
             'clientIp'  => $request->getClientIp(),
@@ -121,7 +145,11 @@ class DatabaseStorage implements StorageInterface
         }
 
         $model->setData($data);
+<<<<<<< HEAD
         $model->setUsername($username);
+=======
+
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
         $objectManager = $this->getObjectManager();
 
         $objectManager->persist($model);
@@ -145,7 +173,11 @@ class DatabaseStorage implements StorageInterface
     }
 
     /**
+<<<<<<< HEAD
      * @return \Ash\LoginGateBundle\Model\FailureLoginAttemptRepositoryInterface
+=======
+     * @return \Anyx\LoginGateBundle\Model\FailureLoginAttemptRepositoryInterface
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
      */
     protected function getRepository()
     {
@@ -158,6 +190,7 @@ class DatabaseStorage implements StorageInterface
      */
     protected function hasIp(Request $request)
     {
+<<<<<<< HEAD
         $request->getSession()->get('_security.last_username');
         return $request->getClientIp() != '';
     }
@@ -171,4 +204,8 @@ class DatabaseStorage implements StorageInterface
     {
         return $request->getSession()->get('_security.last_username');
     }
+=======
+        return $request->getClientIp() != '';
+    }
+>>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
 }
