@@ -1,15 +1,7 @@
 parameters:
-<<<<<<< HEAD
     ash.login_gate.mongodb.document_class: Ash\LoginGateBundle\Document\FailureLoginAttempt
 services:
     ash.login_gate.storage.mongodb:
         class: Ash\LoginGateBundle\Storage\DatabaseAccountStorage
         arguments: ['@doctrine_mongodb.odm.document_manager', '%a.login_gate.mongodb.document_class%', '%ash.login_gate.watch_period%']
-=======
-    anyx.login_gate.mongodb.document_class: Anyx\LoginGateBundle\Document\FailureLoginAttempt
-services:
-    anyx.login_gate.storage.mongodb:
-        class: Anyx\LoginGateBundle\Storage\DatabaseStorage
-        arguments: ['@doctrine_mongodb.odm.document_manager', '%anyx.login_gate.mongodb.document_class%', '%anyx.login_gate.watch_period%']
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
 

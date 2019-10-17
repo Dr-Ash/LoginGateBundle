@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< HEAD
 namespace Ash\LoginGateBundle\Storage;
-=======
-namespace Anyx\LoginGateBundle\Storage;
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
@@ -35,11 +31,7 @@ class CompositeStorage implements StorageInterface
     }
 
     /**
-<<<<<<< HEAD
      * @param \Ash\LoginGateBundle\Storage\StorageInterface $storage
-=======
-     * @param \Anyx\LoginGateBundle\Storage\StorageInterface $storage
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
      */
     public function addStorage(StorageInterface $storage)
     {
@@ -62,7 +54,7 @@ class CompositeStorage implements StorageInterface
     public function getCountAttempts(Request $request)
     {
         $countAttempts = array();
-        
+
         foreach ($this->getStorages() as $storage) {
             $countAttempts[] = $storage->getCountAttempts($request);
         }

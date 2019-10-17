@@ -2,11 +2,7 @@
     "name": "Ash/login-gate-bundle",
     "description": "Checking brute force attacks on site",
     "keywords": ["security", "brute-force"],
-<<<<<<< HEAD
     "homepage": "https://github.com/Ash/LoginGateBundle",
-=======
-    "homepage": "https://github.com/anyx/LoginGateBundle",
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
@@ -33,11 +29,7 @@
         "symfony/css-selector": "^3.4"
     },
     "autoload": {
-<<<<<<< HEAD
         "psr-4": { "Ash\\LoginGateBundle\\": "" }
-=======
-        "psr-4": { "Anyx\\LoginGateBundle\\": "" }
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
     },
     "config": {
         "bin-dir": "bin"

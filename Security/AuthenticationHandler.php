@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< HEAD
 namespace Ash\LoginGateBundle\Security;
-=======
-namespace Anyx\LoginGateBundle\Security;
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -13,11 +9,7 @@ use Symfony\Component\Security\Core\Event\AuthenticationEvent;
 use Symfony\Component\Security\Core\Event\AuthenticationFailureEvent;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 use Symfony\Component\Security\Http\SecurityEvents;
-<<<<<<< HEAD
 use Ash\LoginGateBundle\Storage\StorageInterface;
-=======
-use Anyx\LoginGateBundle\Storage\StorageInterface;
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
 
 class AuthenticationHandler implements EventSubscriberInterface
 {
@@ -27,21 +19,13 @@ class AuthenticationHandler implements EventSubscriberInterface
     private $requestStack;
 
     /**
-<<<<<<< HEAD
      * @var \Ash\LoginGateBundle\Storage\StorageInterface
-=======
-     * @var \Anyx\LoginGateBundle\Storage\StorageInterface
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
      */
     private $storage;
 
     /**
      * @param \Symfony\Component\HttpFoundation\RequestStack $requestStack
-<<<<<<< HEAD
      * @param \Ash\LoginGateBundle\Storage\StorageInterface $storage
-=======
-     * @param \Anyx\LoginGateBundle\Storage\StorageInterface $storage
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
      */
     public function __construct(RequestStack $requestStack, StorageInterface $storage)
     {
@@ -78,11 +62,7 @@ class AuthenticationHandler implements EventSubscriberInterface
     }
 
     /**
-<<<<<<< HEAD
      * @return \Ash\LoginGateBundle\Storage\StorageInterface
-=======
-     * @return \Anyx\LoginGateBundle\Storage\StorageInterface
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
      */
     public function getStorage()
     {

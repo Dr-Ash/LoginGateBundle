@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
 namespace Ash\LoginGateBundle\DependencyInjection;
-=======
-namespace Anyx\LoginGateBundle\DependencyInjection;
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -32,21 +28,21 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('watch_period')->defaultValue(10000)->end()
-                ->arrayNode('options')
-                    ->children()
-                        ->scalarNode('max_count_attempts')->defaultValue(3)->end()
-                        ->scalarNode('timeout')->defaultValue(3000)->end()
-                        ->scalarNode('watch_period')->defaultValue(6000)->end()
-                    ->end()
-                ->end()
-                ->arrayNode('storages')
-                    ->requiresAtLeastOneElement()
-                    ->prototype('scalar')
-                    ->validate()
-                    ->ifNotInArray(['session', 'orm', 'mongodb'])
-                    ->thenInvalid("Invalid storage type '%s'. Available types: 'session', 'orm', 'mongodb'")
-                ->end()
+            ->scalarNode('watch_period')->defaultValue(10000)->end()
+            ->arrayNode('options')
+            ->children()
+            ->scalarNode('max_count_attempts')->defaultValue(3)->end()
+            ->scalarNode('timeout')->defaultValue(3000)->end()
+            ->scalarNode('watch_period')->defaultValue(6000)->end()
+            ->end()
+            ->end()
+            ->arrayNode('storages')
+            ->requiresAtLeastOneElement()
+            ->prototype('scalar')
+            ->validate()
+            ->ifNotInArray(['session', 'orm', 'mongodb'])
+            ->thenInvalid("Invalid storage type '%s'. Available types: 'session', 'orm', 'mongodb'")
+            ->end()
         ;
 
         return $treeBuilder;
