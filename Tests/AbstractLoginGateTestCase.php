@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< HEAD
 namespace Ash\LoginGateBundle\Tests;
-=======
-namespace Anyx\LoginGateBundle\Tests;
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\DomCrawler\Crawler;
@@ -83,13 +79,8 @@ abstract class AbstractLoginGateTestCase extends KernelTestCase
     public function testClearLoginAttempts()
     {
         $this->client->request('GET', '');
-<<<<<<< HEAD
         /** @var \Ash\LoginGateBundle\Service\BruteForceChecker $bruteForceChecker */
         $bruteForceChecker = $this->container->get('Ash.login_gate.brute_force_checker');
-=======
-        /** @var \Anyx\LoginGateBundle\Service\BruteForceChecker $bruteForceChecker */
-        $bruteForceChecker = $this->container->get('anyx.login_gate.brute_force_checker');
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
         $request = $this->client->getRequest();
 
         $this->assertEquals(0, $bruteForceChecker->getStorage()->getCountAttempts($request));

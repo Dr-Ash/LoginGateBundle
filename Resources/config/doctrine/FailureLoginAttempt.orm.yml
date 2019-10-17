@@ -1,32 +1,22 @@
-<<<<<<< HEAD
 Ash\LoginGateBundle\Entity\FailureLoginAttempt:
-    type: entity
-    table: failure_login_attempt
-    repositoryClass: Ash\LoginGateBundle\Entity\FailureLoginAttemptRepository
-=======
-Anyx\LoginGateBundle\Entity\FailureLoginAttempt:
-    type: entity
-    table: failure_login_attempt
-    repositoryClass: Anyx\LoginGateBundle\Entity\FailureLoginAttemptRepository
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
-    indexes:
-        ip:
-            columns: [ ip ]
+  type: entity
+  table: failure_login_attempt
+  repositoryClass: Ash\LoginGateBundle\Entity\FailureLoginAttemptRepository
+  indexes:
+    ip:
+      columns: [ ip ]
+  id:
     id:
-        id:
-            type: integer
-            generator: { strategy: AUTO }
-    fields:
-        ip:
-            type: string
-            length: 45 #compatibility with ipv6
-<<<<<<< HEAD
-        username:
-            type: string
-            length: 225 #compatibility with ipv6
-=======
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
-        createdAt:
-            type: datetime
-        data:
-            type: array
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    ip:
+      type: string
+      length: 45 #compatibility with ipv6
+    username:
+      type: string
+      length: 225 #compatibility with ipv6
+    createdAt:
+      type: datetime
+    data:
+      type: array

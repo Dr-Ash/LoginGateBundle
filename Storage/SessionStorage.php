@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< HEAD
 namespace Ash\LoginGateBundle\Storage;
-=======
-namespace Anyx\LoginGateBundle\Storage;
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
@@ -14,9 +10,9 @@ class SessionStorage implements StorageInterface
     const COUNT_LOGIN_ATTEMPTS = '_security.count_login_attempts';
 
     const DATE_LAST_LOGIN_ATTEMPT = '_security.last_failurelogin_attempt';
-    
+
     /**
-     * 
+     *
      * @param \Symfony\Component\HttpFoundation\Request $request
      */
     public function clearCountAttempts(Request $request)
@@ -26,7 +22,7 @@ class SessionStorage implements StorageInterface
     }
 
     /**
-     * 
+     *
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @return integer
      */
@@ -36,7 +32,7 @@ class SessionStorage implements StorageInterface
     }
 
     /**
-     * 
+     *
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @param \Symfony\Component\Security\Core\Exception\AuthenticationException $exception
      */
@@ -47,7 +43,7 @@ class SessionStorage implements StorageInterface
     }
 
     /**
-     * 
+     *
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @return \DateTime
      */
@@ -57,7 +53,7 @@ class SessionStorage implements StorageInterface
         if ($session->has(self::DATE_LAST_LOGIN_ATTEMPT)) {
             return clone $session->get(self::DATE_LAST_LOGIN_ATTEMPT);
         }
-        
+
         return false;
     }
 }

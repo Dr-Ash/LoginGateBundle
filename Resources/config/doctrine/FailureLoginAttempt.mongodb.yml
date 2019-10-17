@@ -1,20 +1,14 @@
-<<<<<<< HEAD
 Ash\LoginGateBundle\Document\FailureLoginAttempt:
-    type: document
-    repositoryClass: Ash\LoginGateBundle\Document\FailureLoginAttemptRepository
-=======
-Anyx\LoginGateBundle\Document\FailureLoginAttempt:
-    type: document
-    repositoryClass: Anyx\LoginGateBundle\Document\FailureLoginAttemptRepository
->>>>>>> aa5cb8cae974b75f2ca2ed5c254121304f479e4c
-    fields:
-        id:
-            type: id
-            id: true
-        ip:
-            type: string
-            index: true
-        createdAt:
-            type: date
-        data:
-            type: hash
+  type: document
+  repositoryClass: Ash\LoginGateBundle\Document\FailureLoginAttemptRepository
+  fields:
+    id:
+      type: id
+      id: true
+    ip:
+      type: string
+      index: true
+    createdAt:
+      type: date
+    data:
+      type: hash

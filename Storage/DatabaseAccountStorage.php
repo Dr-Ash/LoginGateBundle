@@ -70,6 +70,8 @@ class DatabaseAccountStorage implements StorageInterface
         $startWatchDate = new \DateTime();
         $startWatchDate->modify('-' . $this->getWatchPeriod(). ' second');
 
+//        dump($this->getRepository()->getCountAttempts($request->getClientIp(), $this->getUsername($request), $startWatchDate));
+//        dd($request->getClientIp(), $this->getUsername($request));
         return $this->getRepository()->getCountAttempts($request->getClientIp(), $this->getUsername($request), $startWatchDate);
     }
 
@@ -160,7 +162,7 @@ class DatabaseAccountStorage implements StorageInterface
      */
     protected function hasIp(Request $request)
     {
-        $request->getSession()->get('_security.last_username');
+//        $request->getSession()->get('_security.last_username');
         return $request->getClientIp() != '';
     }
 
@@ -172,8 +174,10 @@ class DatabaseAccountStorage implements StorageInterface
     protected function getUsername(Request $request)
     {
 
+
+        return $request->get('_username') ?? $request->getSession()->get('_security.last_username');
 //        return $this->authEvent->getAuthenticationToken()->getUsername();
 //        dd($request->getSession()->get('_security.last_username'));
-        return $request->getSession()->get('_security.last_username');
+//        return $request->getSession()->get('_security.last_username');
     }
 }
